@@ -5,11 +5,11 @@ export class Client {
   public address: string
   public phone: string
   public email: string
-  public birthDate: Date
-  public hash: string
-  public salt: string
-  public refreshJWT: Object
-  public isVerified: Boolean
+  public birthDate: Date | string
+  public hash?: string
+  public salt?: string
+  public refreshJWT?: Object
+  public isVerified?: Boolean
 
   constructor(props: Client) {
     Object.assign(this, props)
