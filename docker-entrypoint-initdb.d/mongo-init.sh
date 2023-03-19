@@ -31,4 +31,25 @@ db.clientschemas.insert([
   }
 ])
 
+db.createCollection("calledschemas")
+db.calledschemas.insert([
+  {
+  _id: ObjectId("6417736a9b99fa1eb4b6395f"),
+  clientId: ObjectId("6415f212da63a53a41fec995"),
+  number:"16353421",
+  subject:"Dúvida sobre produto",
+  description:"O produto está com a cor diferente do anúncio",
+  openedDate:"2023-03-1",
+  status: "Pendente",
+  category:"Produtos",
+  image:"files-1679258474176.jpg",
+  evaluation: 5,
+  conversations: [{
+    sender: "Daniel Barboza",
+    message: "O produto está com a cor diferente do anúncio",
+    msgAt: "2023-03-1"
+  }]
+  }
+])
+
 EOF
