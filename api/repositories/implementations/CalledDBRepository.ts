@@ -4,7 +4,6 @@ import calledSchema from '../../database/schemas/schemas.called'
 
 export class CalledDBRepository implements ICalledRepository {
   async save(data: Called): Promise<boolean> {
-
     const resultDB = await calledSchema.create({
       clientId: data.clientId,
       number: data.number,
@@ -18,7 +17,11 @@ export class CalledDBRepository implements ICalledRepository {
       evaluation: data.evaluation,
       conversations: data.conversations
     })
-
     return !!resultDB
+  }
+
+  async findAllCalled(): Promise<Object> {
+    const result = await calledSchema.find()
+    return result
   }
 }
