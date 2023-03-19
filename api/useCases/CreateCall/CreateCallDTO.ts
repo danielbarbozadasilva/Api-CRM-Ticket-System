@@ -9,6 +9,6 @@ export interface ICallRequestDTO {
   status: string
   category: string
   image: string
-  evaluation: string
+  evaluation: number
   conversations: Array<Object>
 }
