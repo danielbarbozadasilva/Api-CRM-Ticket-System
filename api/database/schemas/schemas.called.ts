@@ -44,7 +44,7 @@ const calledSchema = new Schema(
       required: true
     },
     evaluation: {
-      type: String,
+      type: Number,
       required: true
     },
     conversations: [
