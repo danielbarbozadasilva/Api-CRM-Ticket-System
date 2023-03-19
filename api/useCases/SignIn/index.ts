@@ -1,4 +1,4 @@
-import { SignInRepository } from '../../repositories/implementations/SignInRepository'
+import { SignInRepository } from '../../repositories/implementations/SignInDBRepository'
 import { SignInController } from './SignInController'
 import { SignInUseCase } from './SignInUseCase'
 
