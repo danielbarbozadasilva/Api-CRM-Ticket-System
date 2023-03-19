@@ -10,6 +10,6 @@ export interface CalledInterface extends Document {
   status: string
   category: string
   image: string
-  evaluation: string
+  evaluation: number
   conversations: Array<Object>
 }

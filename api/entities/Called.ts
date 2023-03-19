@@ -9,7 +9,7 @@ export class Called {
   public status: string
   public category: string
   public image: string
-  public evaluation: string
+  public evaluation: number
   public conversations: Array<Object>
 
   constructor(props: Called) {
