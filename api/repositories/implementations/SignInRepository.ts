@@ -1,0 +1,33 @@
+import { ISignInRepository } from '../ISignInRepository'
+import clientSchema from '../../database/schemas/schemas.client'
+import jwt from 'jsonwebtoken'
+import Cryptography from '../../utils/cryptography'
+
+export class SignInRepository implements ISignInRepository {
+  async verifyCredentials(email: string, password: string): Promise<boolean> {
+    const result = await clientSchema.findOne({ email })
+    if (!!result) {
+      return Cryptography.validatePassword(password, result.salt, result.hash)
+    }
+    return false
+  }
+
+  async authenticate(email: string): Promise<object> {
+    const result = await clientSchema.findOne({ email })
+    const data = {
+      _id: result._id,
+      name: result.name,
+      email: result.email
+    }
+    const token = jwt.sign(
+      {
+        ...data
+      },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: process.env.JWT_VALID_TIME
+      }
+    )
+    return { token, data }
+  }
+}
