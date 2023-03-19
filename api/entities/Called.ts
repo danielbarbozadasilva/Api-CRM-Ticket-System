@@ -6,7 +6,7 @@ export class Called {
   public description: string
   public openedDate: Date
   public closedDate: Date
-  public status: Date
+  public status: string
   public category: string
   public image: string
   public evaluation: string
