@@ -13,7 +13,7 @@ export class CreateCallController {
         description: request.body.description,
         openedDate: new Date(),
         closedDate: request.body.closedDate,
-        status: request.body.status,
+        status: 'Pendente',
         category: request.body.category,
         image: request.files?.length ? request.files[0].filename : '',
         evaluation: request.body.evaluation,
