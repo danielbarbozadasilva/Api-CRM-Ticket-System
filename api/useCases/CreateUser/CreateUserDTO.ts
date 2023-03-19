@@ -5,9 +5,9 @@ export interface ICreateUserRequestDTO {
   address: string
   phone: string
   email: string
-  birthDate: Date
-  salt: string
-  hash: string
-  refreshJWT: Object
-  isVerified: boolean
+  birthDate: string | Date
+  salt?: string
+  hash?: string
+  refreshJWT?: Object
+  isVerified?: boolean
 }
