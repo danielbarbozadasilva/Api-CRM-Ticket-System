@@ -24,4 +24,9 @@ export class CalledDBRepository implements ICalledRepository {
     const result = await calledSchema.find()
     return result
   }
+
+  async findByIdCalled(id: String): Promise<Object> {
+    const result = await calledSchema.findById(id)
+    return result
+  }
 }
