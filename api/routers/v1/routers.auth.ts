@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { createUserController } from '../../useCases/CreateUser'
+import { registerController } from '../../useCases/Register'
 import { signInController } from '../../useCases/SignIn'
 
 export default (router: Router): void => {
@@ -8,6 +8,6 @@ export default (router: Router): void => {
   })
 
   router.route('/register').post((request, response) => {
-    createUserController.handle(request, response)
+    registerController.handle(request, response)
   })
 }

@@ -1,11 +1,11 @@
 import { Client } from '../../entities/Client'
 import { IUserRepository } from '../../repositories/IUsersRepository'
-import { ICreateUserRequestDTO } from './CreateUserDTO'
+import { IRegisterRequestDTO } from './RegisterDTO'
 
-export class CreateUserUseCase {
+export class RegisterUseCase {
   constructor(private userRepository: IUserRepository) {}
 
-  async execute(data: ICreateUserRequestDTO) {
+  async execute(data: IRegisterRequestDTO) {
     const userAlreadyExists = await this.userRepository.findByEmail(data.email)
 
     if (userAlreadyExists) {

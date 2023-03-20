@@ -1,4 +1,4 @@
-export interface ICreateUserRequestDTO {
+export interface IRegisterRequestDTO {
   id?: string
   name: string
   cpf: string
