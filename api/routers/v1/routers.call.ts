@@ -4,6 +4,7 @@ import { createCallController } from '../../useCases/CreateCall'
 import { listCallController } from '../../useCases/ListAllCall'
 import { viewCallController } from '../../useCases/ViewCall'
 import { changeStatusController } from '../../useCases/ChangeStatus'
+import { answerCallController } from '../../useCases/AnswerCall'
 
 export default (router: Router): void => {
   router.route('/call').get((request, response) => {
@@ -19,5 +20,8 @@ export default (router: Router): void => {
   })
   router.route('/call/status/:id').put((request, response) => {
     changeStatusController.handle(request, response)
+  })
+  router.route('/call/reply/:id').post((request, response) => {
+    answerCallController.handle(request, response)
   })
 }

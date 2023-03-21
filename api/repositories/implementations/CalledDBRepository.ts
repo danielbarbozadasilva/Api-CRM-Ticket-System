@@ -38,4 +38,13 @@ export class CalledDBRepository implements ICalledRepository {
     })
     return !!result
   }
+
+  async answerCall(data: Called): Promise<boolean> {
+    const result = await calledSchema.findByIdAndUpdate(data._id, {
+      $push: {
+        conversations: data.conversations
+      }
+    })
+    return !!result
+  }
 }
