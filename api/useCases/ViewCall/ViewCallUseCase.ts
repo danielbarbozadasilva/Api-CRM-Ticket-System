@@ -1,7 +1,7 @@
 import { ICalledRepository } from '../../repositories/ICalledRepository'
-import { ICallRequestDTO } from './ListByIdCallDTO'
+import { ICallRequestDTO } from './ViewCallDTO'
 
-export class ListByIdCallUseCase {
+export class ViewCallUseCase {
   constructor(private iCalledRepository: ICalledRepository) {}
 
   async execute(data: ICallRequestDTO) {

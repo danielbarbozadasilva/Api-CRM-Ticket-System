@@ -1,12 +1,12 @@
 import { Request, Response } from 'express'
-import { ListByIdCallUseCase } from './ListByIdCallUseCase'
+import { ViewCallUseCase } from './ViewCallUseCase'
 
-export class ListByIdCallController {
-  constructor(private listByIdCallUseCase: ListByIdCallUseCase) {}
+export class ViewCallController {
+  constructor(private viewCallCallUseCase: ViewCallUseCase) {}
 
   async handle(request: Request, response: Response) {
     try {
-      const data = await this.listByIdCallUseCase.execute({
+      const data = await this.viewCallCallUseCase.execute({
         id: request.params.id
       })
 

@@ -1,7 +1,7 @@
 import { Router } from 'express'
 import { createCallController } from '../../useCases/CreateCall'
 import { listCallController } from '../../useCases/ListAllCall'
-import { listByIdCallController } from '../../useCases/ListByIdCall'
+import { viewCallController } from '../../useCases/ViewCall'
 import fileUpload from '../../utils/utils.file'
 
 export default (router: Router): void => {
@@ -14,6 +14,6 @@ export default (router: Router): void => {
       createCallController.handle(request, response)
     })
   router.route('/call/:id').get((request, response) => {
-    listByIdCallController.handle(request, response)
+    viewCallController.handle(request, response)
   })
 }
