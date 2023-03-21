@@ -47,4 +47,13 @@ export class CalledDBRepository implements ICalledRepository {
     })
     return !!result
   }
+
+  async evalueteCall(data: Called): Promise<boolean> {
+    const result = await calledSchema.findByIdAndUpdate(data._id, {
+      $set: {
+        evaluation: data.evaluation
+      }
+    })
+    return !!result
+  }
 }

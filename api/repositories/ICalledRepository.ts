@@ -6,4 +6,5 @@ export interface ICalledRepository {
   findAllCalled(): Promise<Object>
   changeStatus(data: Object): Promise<boolean>
   answerCall(data: Object): Promise<boolean>
+  evalueteCall(data: Object): Promise<boolean>
 }
