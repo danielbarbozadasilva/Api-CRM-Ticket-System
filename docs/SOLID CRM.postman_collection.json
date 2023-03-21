@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "d297b4ea-b458-420b-855d-61a721359ddf",
+		"name": "SOLID CRM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11940030"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "auth.register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Daniel\",\r\n    \"cpf\": \"123.345.567-90\",\r\n    \"address\": \"Rua abc, 123\",\r\n    \"phone\": \"(21)98987-0998\",\r\n    \"email\": \"daniel80dbarboza@gmail.com\",\r\n    \"password\": \"daniel\",\r\n    \"birthDate\": \"09/09/2000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3011/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3011",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "auth.login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"daniel80barboza@gmail.com\",\r\n    \"password\": \"daniel\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3011/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3011",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Call",
+			"item": [
+				{
+					"name": "call.ListAllCall",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3011/call",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3011",
+							"path": [
+								"call"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "call.ViewCall",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3011/call/6417736a9b99fa1eb4b6395f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3011",
+							"path": [
+								"call",
+								"6417736a9b99fa1eb4b6395f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "call.CreateCall",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "clientId",
+									"value": "6415f212da63a53a41fec995",
+									"type": "text"
+								},
+								{
+									"key": "number",
+									"value": "16353421",
+									"type": "text"
+								},
+								{
+									"key": "subject",
+									"value": "Dúvida sobre produto",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "O produto está com a cor diferente do anúncio",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "Produtos",
+									"type": "text"
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/C:/Users/pc01/Pictures/b9ad772005653afce4d4bd46c2efe842_XL.jpg"
+								},
+								{
+									"key": "evaluation",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "sender",
+									"value": "Daniel Barboza",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "O produto está com a cor diferente do anúncio",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3011/call",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3011",
+							"path": [
+								"call"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "call.ChangeStatus",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"Finalizada\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3011/call/status/6417736a9b99fa1eb4b6395f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3011",
+							"path": [
+								"call",
+								"status",
+								"6417736a9b99fa1eb4b6395f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "call.EvaluateCall",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"evaluation\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3011/call/evaluate/6417736a9b99fa1eb4b6395f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3011",
+							"path": [
+								"call",
+								"evaluate",
+								"6417736a9b99fa1eb4b6395f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "call.AnswerCall",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sender\": \"daniel@gmail.com\",\r\n    \"message\": \"Boa tarde, prezado cliente...\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3011/call/reply/6417736a9b99fa1eb4b6395f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3011",
+							"path": [
+								"call",
+								"reply",
+								"6417736a9b99fa1eb4b6395f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
