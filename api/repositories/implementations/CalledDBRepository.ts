@@ -29,4 +29,13 @@ export class CalledDBRepository implements ICalledRepository {
     const result = await calledSchema.findById(id)
     return result
   }
+
+  async changeStatus(data: Called): Promise<boolean> {
+    const result = await calledSchema.findByIdAndUpdate(data._id, {
+      $set: {
+        status: data.status
+      }
+    })
+    return !!result
+  }
 }
