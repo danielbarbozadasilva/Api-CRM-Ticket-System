@@ -7,9 +7,9 @@ export class ListCallController {
   async handle(request: Request, response: Response) {
     try {
       const data = await this.listCallUseCase.execute()
-
+      
       return response
-        .status(201)
+        .status(200)
         .send({ message: 'Call successfully listed!', data })
     } catch (error) {
       return response

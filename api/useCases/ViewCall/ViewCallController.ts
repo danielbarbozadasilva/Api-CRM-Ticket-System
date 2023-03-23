@@ -11,7 +11,7 @@ export class ViewCallController {
       })
 
       return response
-        .status(201)
+        .status(200)
         .send({ message: 'Called successfully listed!', data })
     } catch (error) {
       return response
