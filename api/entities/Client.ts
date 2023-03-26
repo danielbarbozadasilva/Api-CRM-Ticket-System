@@ -5,6 +5,7 @@ export class Client {
   public address: string
   public phone: string
   public email: string
+  public permission?: string
   public birthDate: Date | string
   public hash?: string
   public salt?: string

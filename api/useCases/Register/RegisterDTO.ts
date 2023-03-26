@@ -4,6 +4,7 @@ export interface IRegisterRequestDTO {
   cpf: string
   address: string
   phone: string
+  permission?: string
   email: string
   birthDate: string | Date
   salt?: string

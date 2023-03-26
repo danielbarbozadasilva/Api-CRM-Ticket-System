@@ -17,7 +17,8 @@ export class SignInRepository implements ISignInRepository {
     const data = {
       _id: result._id,
       name: result.name,
-      email: result.email
+      email: result.email,
+      permission: result.permission
     }
     const token = jwt.sign(
       {

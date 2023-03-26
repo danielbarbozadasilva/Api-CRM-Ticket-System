@@ -6,6 +6,7 @@ export interface ClientInterface extends Document {
   address: string
   phone: string
   email: string
+  permission: string
   birthDate: Date
   hash: string
   salt: string

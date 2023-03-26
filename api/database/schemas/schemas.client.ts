@@ -24,6 +24,10 @@ const clientSchema = new Schema(
       maxlength: 50,
       required: true
     },
+    permission: {
+      type: String,
+      required: true
+    },
     birthDate: {
       type: Date,
       required: true
