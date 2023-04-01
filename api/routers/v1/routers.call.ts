@@ -19,13 +19,13 @@ export default (router: Router): void => {
   router.route('/call/:id').get((request, response) => {
     viewCallController.handle(request, response)
   })
-  router.route('/call/status/:id').put((request, response) => {
+  router.route('/call/:id/status').put((request, response) => {
     changeStatusController.handle(request, response)
   })
-  router.route('/call/reply/:id').post((request, response) => {
+  router.route('/call/:id/reply').post((request, response) => {
     answerCallController.handle(request, response)
   })
-  router.route('/call/evaluate/:id').put((request, response) => {
+  router.route('/call/:id/evaluate').put((request, response) => {
     evaluateCallController.handle(request, response)
   })
 }
