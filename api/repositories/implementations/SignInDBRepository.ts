@@ -1,5 +1,5 @@
 import { ISignInRepository } from '../ISignInRepository'
-import clientSchema from '../../database/schemas/schemas.client'
+import clientSchema from '../../database/schemas/schemas.user'
 import jwt from 'jsonwebtoken'
 import Cryptography from '../../utils/cryptography'
 
