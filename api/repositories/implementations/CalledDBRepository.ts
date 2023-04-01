@@ -8,7 +8,6 @@ export class CalledDBRepository implements ICalledRepository {
       clientId: data.clientId,
       number: data.number,
       subject: data.subject,
-      description: data.description,
       openedDate: data.openedDate,
       closedDate: data.closedDate,
       status: data.status,

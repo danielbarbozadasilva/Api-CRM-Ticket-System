@@ -10,7 +10,6 @@ export class CreateCallController {
         clientId: request.body.clientId,
         number: request.body.number,
         subject: request.body.subject,
-        description: request.body.description,
         openedDate: new Date(),
         closedDate: request.body.closedDate,
         status: 'Pendente',
