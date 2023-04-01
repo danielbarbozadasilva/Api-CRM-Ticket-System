@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "auth",
+			"name": "Auth",
 			"item": [
 				{
 					"name": "auth.register",
@@ -44,7 +44,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"daniel80barboza@gmail.com\",\r\n    \"password\": \"daniel\"\r\n}",
+							"raw": "{\r\n    \"email\": \"marcos@gmail.com\",\r\n    \"password\": \"daniel\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -217,7 +217,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3011/call/status/6417736a9b99fa1eb4b6395f",
+							"raw": "http://localhost:3011/call/6417736a9b99fa1eb4b6395f/status",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -225,8 +225,8 @@
 							"port": "3011",
 							"path": [
 								"call",
-								"status",
-								"6417736a9b99fa1eb4b6395f"
+								"6417736a9b99fa1eb4b6395f",
+								"status"
 							]
 						}
 					},
@@ -247,7 +247,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3011/call/evaluate/6417736a9b99fa1eb4b6395f",
+							"raw": "http://localhost:3011/call/6417736a9b99fa1eb4b6395f/evaluate",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -255,8 +255,8 @@
 							"port": "3011",
 							"path": [
 								"call",
-								"evaluate",
-								"6417736a9b99fa1eb4b6395f"
+								"6417736a9b99fa1eb4b6395f",
+								"evaluate"
 							]
 						}
 					},
@@ -277,7 +277,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3011/call/reply/6417736a9b99fa1eb4b6395f",
+							"raw": "http://localhost:3011/call/6417736a9b99fa1eb4b6395f/reply",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -285,8 +285,46 @@
 							"port": "3011",
 							"path": [
 								"call",
-								"reply",
-								"6417736a9b99fa1eb4b6395f"
+								"6417736a9b99fa1eb4b6395f",
+								"reply"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "client.ListCallByClient",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3011/client/64208560d0a5728a6bffe6b8/call",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3011",
+							"path": [
+								"client",
+								"64208560d0a5728a6bffe6b8",
+								"call"
 							]
 						}
 					},
