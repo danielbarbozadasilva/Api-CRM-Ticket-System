@@ -3,7 +3,6 @@ export class Called {
   public clientId: string
   public number: string
   public subject: string
-  public description: string
   public openedDate: Date
   public closedDate: Date
   public status: string
