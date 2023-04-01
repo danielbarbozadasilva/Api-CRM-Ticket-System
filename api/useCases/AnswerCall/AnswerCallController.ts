@@ -9,7 +9,7 @@ export class AnswerCallController {
         _id: request.params.id,
         conversations: {
           sender: request.body.sender,
-          message: request.body.message,
+          message: request.body.reply,
           msgAt: new Date()
         }
       })
