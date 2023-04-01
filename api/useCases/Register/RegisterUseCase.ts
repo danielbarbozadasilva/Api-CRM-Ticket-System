@@ -1,4 +1,4 @@
-import { Client } from '../../entities/Client'
+import { User } from '../../entities/User'
 import { IUserRepository } from '../../repositories/IUsersRepository'
 import { IRegisterRequestDTO } from './RegisterDTO'
 
@@ -11,7 +11,7 @@ export class RegisterUseCase {
     if (userAlreadyExists) {
       throw new Error('User already exists.')
     }
-    const userCreate = new Client(data)
+    const userCreate = new User(data)
     return this.userRepository.save(userCreate)
   }
 }
