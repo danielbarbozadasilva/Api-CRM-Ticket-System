@@ -3,7 +3,6 @@ export interface ICallRequestDTO {
   clientId: string
   number: string
   subject: string
-  description: string
   openedDate: Date
   closedDate: Date
   status: string
