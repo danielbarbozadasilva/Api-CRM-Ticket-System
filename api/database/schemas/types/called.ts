@@ -4,7 +4,6 @@ export interface CalledInterface extends Document {
   clientId: string
   number: string
   subject: string
-  description: string
   openedDate: Date
   closedDate: Date
   status: string
