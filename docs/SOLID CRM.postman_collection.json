@@ -329,6 +329,37 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "client.ListAllClients",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3011/client",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3011",
+							"path": [
+								"client"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
