@@ -16,10 +16,6 @@ const calledSchema = new Schema(
       required: true,
       default: ''
     },
-    description: {
-      type: String,
-      required: true
-    },
     openedDate: {
       type: Date,
       required: true,
@@ -44,7 +40,7 @@ const calledSchema = new Schema(
       required: true
     },
     evaluation: {
-      type: String,
+      type: Number,
       required: true
     },
     conversations: [

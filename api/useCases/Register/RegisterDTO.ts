@@ -1,9 +1,10 @@
-export interface ICreateUserRequestDTO {
+export interface IRegisterRequestDTO {
   id?: string
   name: string
   cpf: string
   address: string
   phone: string
+  permission?: string
   email: string
   birthDate: string | Date
   salt?: string

@@ -1,15 +1,15 @@
 import { Request, Response } from 'express'
 import Cryptography from '../../utils/cryptography'
-import { CreateUserUseCase } from './CreateUserCase'
+import { RegisterUseCase } from './RegisterUseCase'
 
-export class CreateUserController {
-  constructor(private createUserUseCase: CreateUserUseCase) {}
+export class RegisterController {
+  constructor(private registerUseCase: RegisterUseCase) {}
 
   async handle(request: Request, response: Response) {
     try {
       const salt = Cryptography.createSalt()
 
-      await this.createUserUseCase.execute({
+      await this.registerUseCase.execute({
         name: request.body.name,
         cpf: request.body.cpf,
         address: request.body.address,

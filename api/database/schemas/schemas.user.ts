@@ -1,7 +1,7 @@
 import { model, Schema } from 'mongoose'
-import { ClientInterface } from './types/client'
+import { UserInterface } from './types/client'
 
-const clientSchema = new Schema(
+const usersSchema = new Schema(
   {
     name: {
       type: String,
@@ -22,6 +22,10 @@ const clientSchema = new Schema(
     email: {
       type: String,
       maxlength: 50,
+      required: true
+    },
+    permission: {
+      type: String,
       required: true
     },
     birthDate: {
@@ -57,4 +61,4 @@ const clientSchema = new Schema(
   { timestamps: true }
 )
 
-export default model<ClientInterface>('ClientSchema', clientSchema)
+export default model<UserInterface>('userschemas', usersSchema)

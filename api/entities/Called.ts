@@ -3,13 +3,12 @@ export class Called {
   public clientId: string
   public number: string
   public subject: string
-  public description: string
   public openedDate: Date
   public closedDate: Date
-  public status: Date
+  public status: string
   public category: string
   public image: string
-  public evaluation: string
+  public evaluation: number
   public conversations: Array<Object>
 
   constructor(props: Called) {

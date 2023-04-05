@@ -1,15 +1,16 @@
-import { Client } from '../../entities/Client'
+import { User } from '../../entities/User'
 import { IUserRepository } from '../IUsersRepository'
-import clientSchema from '../../database/schemas/schemas.client'
+import clientSchema from '../../database/schemas/schemas.user'
 
 export class UserDBRepository implements IUserRepository {
-  async save(dataUser: Client): Promise<boolean> {
+  async save(dataUser: User): Promise<boolean> {
     const resultDB = await clientSchema.create({
       name: dataUser.name,
       cpf: dataUser.cpf,
       address: dataUser.address,
       phone: dataUser.phone,
       email: dataUser.email,
+      permission: 'client',
       birthDate: dataUser.birthDate,
       hash: dataUser.hash,
       salt: dataUser.salt,

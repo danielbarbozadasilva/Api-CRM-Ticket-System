@@ -1,6 +1,5 @@
-import { Document } from 'mongoose'
-
-export interface CalledInterface extends Document {
+export interface ICallRequestDTO {
+  id?: string
   clientId: string
   number: string
   subject: string

@@ -1,9 +1,9 @@
-import { createUserUseCase } from './index'
+import { registerUseCase } from './index'
 import { createConnection, closeConnection } from '../../database/client'
-import { ICreateUserRequestDTO } from './CreateUserDTO'
+import { IRegisterRequestDTO } from './RegisterDTO'
 import cryptography from '../../utils/cryptography'
 
-describe('Create User', () => {
+describe('Register User', () => {
   beforeAll(() => {
     createConnection()
   })
@@ -12,7 +12,7 @@ describe('Create User', () => {
     await closeConnection()
   })
 
-  describe('Create User', () => {
+  describe('Register User', () => {
     test('Make sure register the user', async () => {
       const salt = cryptography.createSalt()
       const data = {
@@ -25,9 +25,7 @@ describe('Create User', () => {
         hash: cryptography.createHash('daniel', salt),
         salt: salt
       }
-      const result = await createUserUseCase.execute(
-        data as ICreateUserRequestDTO
-      )
+      const result = await registerUseCase.execute(data as IRegisterRequestDTO)
       expect(result).toBe(true)
     })
 
@@ -44,9 +42,7 @@ describe('Create User', () => {
           hash: cryptography.createHash('daniel', salt),
           salt: salt
         }
-        expect(
-          createUserUseCase.execute(data as ICreateUserRequestDTO)
-        ).toThrow()
+        expect(registerUseCase.execute(data as IRegisterRequestDTO)).toThrow()
       } catch (error) {}
     })
   })

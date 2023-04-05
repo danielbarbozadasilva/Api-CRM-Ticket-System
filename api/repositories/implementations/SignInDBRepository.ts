@@ -1,5 +1,5 @@
 import { ISignInRepository } from '../ISignInRepository'
-import clientSchema from '../../database/schemas/schemas.client'
+import clientSchema from '../../database/schemas/schemas.user'
 import jwt from 'jsonwebtoken'
 import Cryptography from '../../utils/cryptography'
 
@@ -17,7 +17,8 @@ export class SignInRepository implements ISignInRepository {
     const data = {
       _id: result._id,
       name: result.name,
-      email: result.email
+      email: result.email,
+      permission: result.permission
     }
     const token = jwt.sign(
       {
